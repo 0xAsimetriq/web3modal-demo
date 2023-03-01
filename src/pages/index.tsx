@@ -1,12 +1,12 @@
-import DemoSteps from '@/components/DemoSteps'
+import DemoSteps from '@/steps/DemoSteps'
 import { EthereumClient, modalConnectors, walletConnectProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
-import { avalancheFuji, bsc, mainnet, polygon } from 'wagmi/chains'
+import { avalanche, bsc, mainnet, polygon } from 'wagmi/chains'
 
 // 0. Define constants
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!
-const chains = [mainnet, avalancheFuji, polygon, bsc]
+const chains = [mainnet, avalanche, polygon, bsc]
 
 // 1. Configure wagmi
 const { provider } = configureChains(chains, [walletConnectProvider({ projectId })])

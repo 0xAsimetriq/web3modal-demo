@@ -1,4 +1,4 @@
-import { createTheme, NextUIProvider } from '@nextui-org/react'
+import { createTheme, Grid, NextUIProvider } from '@nextui-org/react'
 import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 
@@ -13,7 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       {ready ? (
         <NextUIProvider theme={createTheme({ type: 'dark' })}>
-          <Component {...pageProps} />
+          <Grid.Container gap={2} css={{ maxW: '720px', margin: '0 auto' }}>
+            <Component {...pageProps} />
+          </Grid.Container>
         </NextUIProvider>
       ) : null}
     </>
