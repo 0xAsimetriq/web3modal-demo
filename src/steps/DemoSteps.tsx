@@ -7,8 +7,8 @@ export default function DemoSteps() {
   return (
     <>
       <ConnectStep />
-      <NetworkSwitchStep />
       <SignMessageStep />
+      <NetworkSwitchStep />
       <ReadContractStep />
     </>
   )
