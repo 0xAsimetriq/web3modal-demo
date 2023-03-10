@@ -1,6 +1,7 @@
 import { Button, Loading, Modal } from '@nextui-org/react'
 import { useEffect, useState } from 'react'
 import { useContractRead } from 'wagmi'
+import { avalanche } from 'wagmi/chains'
 import Card from '../components/Card'
 import { abi } from '../data/aaveV3Pool'
 
@@ -11,7 +12,8 @@ export default function WriteContractStep() {
     address: '0x794a61358D6845594F94dc1DB02A252b5b4814aD',
     abi,
     functionName: 'getReservesList',
-    enabled: false
+    enabled: false,
+    chainId: avalanche.id
   })
 
   useEffect(() => {
